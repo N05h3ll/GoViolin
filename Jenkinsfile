@@ -85,6 +85,7 @@
                 }
             }
         }
+    }
     post{
     // Success scenario
         success{
@@ -99,4 +100,3 @@
         }
     }
 }
- }

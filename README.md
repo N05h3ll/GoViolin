@@ -20,7 +20,7 @@ Contains:
 
 # Prerequisites
 
-* Install [Dokcer](https://docs.docker.com/engine/install/)
+* Install [Docker](https://docs.docker.com/engine/install/)
 * Install [Jenkins](https://www.jenkins.io/download/)
 
 	Add the following plugins to jenkins:
@@ -30,6 +30,9 @@ Contains:
 	4. Blue Ocean **(Optional)**
 * Install [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 * Configure jenkins to use docker.
+```bash
+usermod -aG docker jenkins
+```
 * Add your [DockerHub](https://hub.docker.com/) -or any image repository- credentials into jenkins credentials manager.
 * Configure your `kubectl` access configuration, [Example Here](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
 

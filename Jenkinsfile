@@ -56,7 +56,7 @@
                 }
                 failure{
                     echo "========Deployment Failed========"
-                    emailext body: "Delpoying application with build number #- ${BUILD_NUMBER} to kubernetes failed, please review this step.", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "${BUILD_NUMBER} - Kubernetes deployment Failed"
+                    emailext body: "Delpoying application with build number #- ${BUILD_NUMBER} to kubernetes failed, please review this step.", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "[ ${BUILD_NUMBER} ] - Kubernetes deployment Failed"
             }
         }
     }
@@ -70,7 +70,7 @@
                     }
                     failure{
                         echo "========Cleanup Failed========"
-                        emailext body: "Deleting docker image with with ID ${BUILD_NUMBER} failed, please review this step.", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "[ ${BUILD_NUMBER} ] - Kubernetes deployment Failed"
+                        emailext body: "Deleting docker image with with ID ${BUILD_NUMBER} failed, please review this step.", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: "[ ${BUILD_NUMBER} ] - Cleanup Failed"
                 }
             }
         }

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+# Create Depolyment
+kind: Deployment
+metadata:
+  name: go-app-deployment
+  labels:
+    app: go-app
+spec:
+  # Number of pods replicas
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-app
+  template:
+    metadata:
+      labels:
+        app: go-app
+    spec:
+      # Pod container specs
+      containers:
+      - name: go-app-image
+        image: n05h3ll/instabug-challenge
+        ports:
+        - containerPort: 8080
+---
+ # Create Service for the app depolyment
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-app-service
+spec:
+  selector:
+    app: go-app
+ # Extrenal accesss type of load balancer
+  type: LoadBalancer
+  ports:
+    # Specify port 80 for normal browser access, the service will map the port to 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

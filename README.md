@@ -28,6 +28,8 @@ Contains:
 	2. Docker Pipeline
 	3. Pipeline
 	4. Blue Ocean **(Optional)**
+  5. Email Extension
+  > Note: you need to configure `Email Extension Plugin` with appropriate email settings, you can follow this [Tutorial](https://www.360logica.com/blog/email-notification-in-jenkins/)
 * Install [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 * Configure jenkins to use docker.
 ```bash
